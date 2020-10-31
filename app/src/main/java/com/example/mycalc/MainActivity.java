@@ -62,41 +62,54 @@ public class MainActivity extends AppCompatActivity {
         button0.setOnClickListener(v -> calcEditText.setText(String.format("%s0", calcEditText.getText())));
 
         buttonAdd.setOnClickListener(v -> {
-            if (calcEditText != null) {
-                mValueOne = Float.parseFloat(calcEditText.getText() + "");
+            try {
+                mValueOne = Float.parseFloat(String.valueOf(calcEditText.getText()));
                 calcAddition = true;
                 calcEditText.setText(null);
             }
+            catch (Exception e){
+                e.printStackTrace();
+            }
+
         });
 
 
         buttonSub.setOnClickListener(v -> {
-            if(calcEditText != null){
-                mValueOne = Float.parseFloat(calcEditText.getText() + "");
+            try {
+                mValueOne = Float.parseFloat(String.valueOf(calcEditText.getText()));
                 calcSubtract = true;
                 calcEditText.setText(null);
+            }
+            catch (Exception e){
+                e.printStackTrace();
             }
         });
 
         buttonMul.setOnClickListener(v -> {
-            if(calcEditText != null){
-                mValueOne = Float.parseFloat(calcEditText.getText() + "");
+            try {
+                mValueOne = Float.parseFloat(String.valueOf(calcEditText.getText()));
                 calcMultiplication = true;
                 calcEditText.setText(null);
+            }
+            catch (Exception e){
+                e.printStackTrace();
             }
         });
 
         buttonDivision.setOnClickListener(v -> {
-            if(calcEditText != null){
-                mValueOne = Float.parseFloat(calcEditText.getText() + "");
+            try {
+                mValueOne = Float.parseFloat(String.valueOf(calcEditText.getText()));
                 calcDivision = true;
                 calcEditText.setText(null);
+            }
+            catch (Exception e){
+                    e.printStackTrace();
             }
         });
 
         buttonEqual.setOnClickListener(v -> {
-            if(calcEditText != null){
-                mValueTwo = Float.parseFloat(calcEditText.getText() + "");
+            try {
+                mValueTwo = Float.parseFloat(String.valueOf(calcEditText.getText()));
 
                 if (calcAddition) {
                     calcEditText.setText(String.format("%s", mValueOne + mValueTwo));
@@ -118,9 +131,12 @@ public class MainActivity extends AppCompatActivity {
                     calcDivision = false;
                 }
             }
+            catch (Exception e){
+                e.printStackTrace();
+            }
         });
 
-        buttonC.setOnClickListener(v -> calcEditText.setText(""));
+        buttonC.setOnClickListener(v -> calcEditText.setText(null));
 
         button10.setOnClickListener(v -> calcEditText.setText(String.format("%s.", calcEditText.getText())));
 
