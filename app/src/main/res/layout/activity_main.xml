@@ -198,5 +198,21 @@
         android:layout_marginTop="37dp"
         android:text="@string/_equal" />
 
+    <Button
+        android:id="@+id/buttondel"
+        android:layout_width="131dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buttonadd"
+        android:layout_alignStart="@+id/buttonadd"
+        android:layout_alignLeft="@+id/buttonadd"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="-1dp"
+        android:layout_marginLeft="-1dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="30dp"
+        android:text="DEL" />
+
 
 </RelativeLayout>

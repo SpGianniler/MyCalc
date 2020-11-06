@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity {
     Button button0, button1, button2, button3, button4, button5, button6,
             button7, button8, button9, buttonAdd, buttonSub, buttonDivision,
-            buttonMul, button10, buttonC, buttonEqual;
+            buttonMul, button10, buttonC, buttonEqual,buttonDel;
     EditText calcEditText;
 
     float mValueOne, mValueTwo;
@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         buttonDivision = findViewById(R.id.buttondiv);
         buttonC = findViewById(R.id.buttonC);
         buttonEqual = findViewById(R.id.buttoneql);
+        buttonDel=findViewById(R.id.buttondel);
         calcEditText = findViewById(R.id.edt1);
 
 
@@ -136,8 +137,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        buttonC.setOnClickListener(v -> calcEditText.setText(null));
-
+        buttonC.setOnClickListener(v -> {
+            mValueTwo=0;
+            mValueOne=0;
+            calcSubtract=false;
+            calcMultiplication=false;
+            calcDivision=false;
+            calcAddition=false;
+            calcEditText.setText(null);
+        });
+        buttonDel.setOnClickListener(v -> calcEditText.setText(null));
         button10.setOnClickListener(v -> calcEditText.setText(String.format("%s.", calcEditText.getText())));
 
 
