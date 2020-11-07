@@ -6,15 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
     <EditText
         android:id="@+id/edt1"
-        android:layout_marginTop="2dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="number"
+        android:layout_marginTop="2dp"
         android:importantForAutofill="no"
+        android:inputType="number"
         tools:ignore="LabelFor" />
-
 
     <Button
         android:id="@+id/button1"
@@ -199,20 +199,17 @@
         android:text="@string/_equal" />
 
     <Button
-        android:id="@+id/buttondel"
-        android:layout_width="131dp"
+        android:id="@+id/buttoncl"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/buttonadd"
-        android:layout_alignStart="@+id/buttonadd"
-        android:layout_alignLeft="@+id/buttonadd"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginStart="-1dp"
-        android:layout_marginLeft="-1dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginBottom="30dp"
-        android:text="DEL" />
+        android:text="@string/last_operation"
+        android:layout_alignEnd="@+id/buttoneql"
+        android:layout_alignLeft="@+id/buttoneql"
+        android:layout_alignRight="@+id/buttondiv"
+        android:layout_alignStart="@+id/button10"
+        android:layout_below="@+id/buttoneql"
+        android:layout_marginTop="7dp"
+        />
 
 
 </RelativeLayout>

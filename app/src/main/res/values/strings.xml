@@ -18,4 +18,5 @@
     <string name="c">C</string>
     <string name="_div">/</string>
     <string name="_equal">=</string>
+    <string name="last_operation">Last Operation</string>
 </resources>
