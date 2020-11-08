@@ -9,12 +9,13 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity {
     Button button0, button1, button2, button3, button4, button5, button6,
             button7, button8, button9, buttonAdd, buttonSub, buttonDivision,
-            buttonMul, button10, buttonC, buttonEqual,buttonDel;
+            buttonMul, button10, buttonC, buttonEqual,buttonDel, buttonlo;
     EditText calcEditText;
 
     float mValueOne, mValueTwo;
 
-    boolean calcAddition, calcSubtract, calcMultiplication, calcDivision;
+    boolean calcAddition, calcSubtract, calcMultiplication, calcDivision,
+            tempcalcAddition, tempcalcSubtract, tempcalcMultiplication, tempcalcDivision;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         buttonMul = findViewById(R.id.buttonmul);
         buttonDivision = findViewById(R.id.buttondiv);
         buttonC = findViewById(R.id.buttonC);
+        buttonlo = findViewById(R.id.buttonLO);
         buttonEqual = findViewById(R.id.buttoneql);
         buttonDel=findViewById(R.id.buttondel);
         calcEditText = findViewById(R.id.edt1);
@@ -74,6 +76,29 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
+        buttonlo.setOnClickListener(v -> {
+            try {
+                if(tempcalcAddition){
+                    calcEditText.setText((mValueOne+"+"+mValueTwo+"="+ (float)(mValueOne + mValueTwo)));
+                    tempcalcAddition = false;
+                }
+                else if(tempcalcSubtract){
+                    calcEditText.setText((mValueOne+"-"+mValueTwo+"="+ (float)(mValueOne - mValueTwo)));
+                    tempcalcSubtract = false;
+                }
+                else if(tempcalcDivision){
+                    calcEditText.setText((mValueOne+"/"+mValueTwo+"="+ (float)(mValueOne / mValueTwo)));
+                    tempcalcDivision = false;
+                }
+                else if(tempcalcMultiplication){
+                    calcEditText.setText((mValueOne+"*"+mValueTwo+"="+ (float)(mValueOne * mValueTwo)));
+                    tempcalcMultiplication = false;
+                }
+            }
+            catch (Exception e){
+                e.printStackTrace();
+            }
+        });
 
         buttonSub.setOnClickListener(v -> {
             try {
@@ -115,21 +140,25 @@ public class MainActivity extends AppCompatActivity {
                 if (calcAddition) {
                     calcEditText.setText(String.format("%s", mValueOne + mValueTwo));
                     calcAddition = false;
+                    tempcalcAddition = true;
                 }
 
                 if (calcSubtract) {
                     calcEditText.setText(String.format("%s", mValueOne - mValueTwo));
                     calcSubtract = false;
+                    tempcalcSubtract = true;
                 }
 
                 if (calcMultiplication) {
                     calcEditText.setText(String.format("%s", mValueOne * mValueTwo));
                     calcMultiplication = false;
+                    tempcalcMultiplication = true;
                 }
 
                 if (calcDivision) {
                     calcEditText.setText(String.format("%s", mValueOne / mValueTwo));
                     calcDivision = false;
+                    tempcalcDivision = true;
                 }
             }
             catch (Exception e){

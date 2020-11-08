@@ -212,7 +212,19 @@
         android:layout_marginEnd="5dp"
         android:layout_marginRight="5dp"
         android:layout_marginBottom="30dp"
-        android:text="DEL" />
+        android:text="@string/del" />
+
+    <Button
+        android:id="@+id/buttonLO"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/buttondiv"
+        android:layout_alignLeft="@+id/button10"
+        android:layout_alignRight="@+id/buttondiv"
+        android:layout_alignStart="@+id/button10"
+        android:layout_below="@+id/buttoneql"
+        android:layout_marginTop="7dp"
+        android:text="@string/last_operation" />
 
 
 </RelativeLayout>
